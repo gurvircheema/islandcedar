@@ -1,0 +1,62 @@
+#menu-toggle
+  = link_to "#", class: "btn btn-lg btn-dark toggle" do
+    %i.fa.fa-bars
+%nav#sidebar-wrapper
+  %ul.sidebar-nav
+    = link_to "#", id: "menu-close", class: "btn btn-light btn-lg pull-right toggle" do
+      %i.fa.fa-times
+    %li.sidebar-brand= link_to "Island Cedar", "#"
+    %li= link_to "Home", "#"
+    %li= link_to "About", "#"
+    %li= link_to "Products", "#"
+    %li= link_to "Services", "#"
+    %li= link_to "Contact", "#"
+//Header
+%header#myCarousel.carousel.slide
+  .text-vertical-center
+    %h1 Island Cedar Products Ltd.
+    %h3 Shake and Shingle Wood mill
+    %br
+    = link_to "Find Out More", "#", class: "btn btn-lg btn-danger"
+  %ol.carousel-indicators
+    %li.active{"data-slide-to" => "0", "data-target" => "#myCarousel"}
+    %li{"data-slide-to" => "1", "data-target" => "#myCarousel"}
+    %li{"data-slide-to" => "2", "data-target" => "#myCarousel"}
+  .carousel-inner
+    .item.active
+      .fill{:style => "background-image:url('images/fraser.jpg');"}
+      .carousel-caption
+        %h2 Caption 1
+    .item
+      .fill{:style => "background-image:url('images/fraser.jpg');"}
+      .carousel-caption
+        %h2 Caption 2
+    .item
+      .fill{:style => "background-image:url('images/fraser.jpg');"}
+      .carousel-caption
+        %h2 Caption 3
+  %a.left.carousel-control{"data-slide" => "prev", :href => "#myCarousel"}
+    %span.icon-prev
+  %a.right.carousel-control{"data-slide" => "next", :href => "#myCarousel"}
+    %span.icon-next
+
+
+
+//
+%header.header#top
+  - carousel = data.carousel.pictures
+  = partial 'layouts/carousel', :locals => {:carousel => carousel }
+  .text-vertical-center
+    %h1 Island Cedar Products Ltd.
+    %h3 Shake and Shingle Wood mill
+    %br
+    = link_to "Find Out More", "#", class: "btn btn-lg btn-danger"
+%section#about.about
+  .container
+    .row
+      .col-lg-12.text-center
+        %h2 Stylish Portfolio is the perfect theme for your next project!
+        %p.lead
+          This theme features some wonderful photography courtesy of
+          = succeed "." do
+            %a{:href => "http://join.deathtothestockphoto.com/", :target => "_blank"} Death to the Stock Photo

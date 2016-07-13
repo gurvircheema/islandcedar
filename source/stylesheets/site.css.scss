@@ -1,0 +1,203 @@
+@charset "utf-8";
+@import "normalize";
+@import "bootstrap.min.css";
+$fa-enable-utilities: false;
+@import "../font-awesome/scss/font-awesome";
+
+html,
+body {
+  width: 100%;
+  height: 100%
+}
+
+body {
+  font-family: "Source Sans Pro", "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.text-vertical-center {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+
+  h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 4.5em;
+    font-weight: 700;
+  }
+}
+
+.btn-dark {
+  border-radius: 0;
+  color: #fff;
+  background-color: rgba(0,0,0,0.4);
+
+  &:hover, &:focus, &:active {
+    color: #fff;
+    background-color: rgba(0,0,0,0.7);
+  }
+}
+
+.btn-light {
+  border-radius: 0;
+  color: #333;
+  background-color: rgba(0,0,0,0.7);
+
+  &:hover, &:focus, &:active {
+    color: #333;
+    background-color: rgb(255,255,255);
+  }
+}
+
+hr.small {
+  max-width: 100px;
+}
+
+#menu-toggle {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.toggle {
+  margin: 5px 5px 0 0;
+}
+
+#sidebar-wrapper {
+  z-index: 1000;
+  position: fixed;
+  right: 0;
+  width: 250px;
+  height: 100%;
+  transform: translateX(250px);
+  overflow-y: auto;
+  background: #222;
+  -webkit-transition: all 0.4s ease 0s;
+  -moz-transition: all 0.4s ease 0s;
+  -ms-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+}
+
+.sidebar-nav {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  #menu-close {
+    background-color: #fff;
+
+    &:hover {
+      background-color: #ccc;
+    }
+  }
+
+  .sidebar-brand {
+    height: 55px;
+    font-size: 18px;
+    line-height: 55px;
+
+    a {
+      color: #999;
+
+      &:hover {
+        color: #fff;
+        background: none;
+      }
+    }
+  }
+
+  li {
+    text-indent: 20px;
+    line-height: 40px;
+
+    a {
+      display: block;
+      text-decoration: none;
+      color: #999;
+
+      &:hover {
+        text-decoration: none;
+        color: #fff;
+        background: rgba(255,255,255,0.1);
+      }
+
+      &:active, &:focus {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+#sidebar-wrapper.active {
+  right: 250px;
+  width: 250px;
+  -webkit-transition: all 0.4s ease 0s;
+  -moz-transition: all 0.4s ease 0s;
+  -ms-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+}
+
+// .header {
+//   display: table;
+//   position: relative;
+//   width: 100%;
+//   height: 100%;
+//   color: #fff;
+//   background: url('../images/fraser.jpg');
+//   -webkit-background-size: cover;
+//   -noz-background-size: cover;
+//   -o-background-size: cover;
+//   background-size: cover;
+//
+//   .scroll-down {
+//     display: inline-table;
+//     position: relative;
+//     font-size: 2.5em;
+//     border: 1px solid #fff;
+//     bottom: 10%;
+//     padding: 10px;
+//     border-radius: 50%;
+//
+//     &:hover {
+//       color: #ccc;
+//       border: 1px solid #ccc;
+//     }
+//   }
+// }
+
+.carousel,
+.item,
+.inner,
+.carousel-inner {
+  height: 100%;
+}
+
+.fill {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.about {
+  padding: 50px 0;
+}
+
+.services {
+  padding: 50px 0;
+}
+
+.service-item {
+  margin-bottom: 30px;
+}
+
+

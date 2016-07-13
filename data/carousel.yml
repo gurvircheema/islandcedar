@@ -1,0 +1,12 @@
+
+pictures:
+  id: 'carousel-page'
+  speed: '7000'
+  image_size: '85'
+  controls: true
+  enlarge: true
+  images:
+    - path: 'images/carousel/1.jpg'
+    - path: 'images/carousel/2.jpg'
+    - path: 'images/carousel/3.jpg'
+    - path: 'images/carousel/4.jpg'

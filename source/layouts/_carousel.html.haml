@@ -1,0 +1,40 @@
+- content_for :script do
+  = javascript_include_tag 'bootstrap/transition'
+  = javascript_include_tag 'bootstrap/carousel'
+
+.carousel.slide{:id => "#{carousel.id}", :class => "#{carousel.id}"}
+  .carousel-inner
+    - count = 1
+    - carousel.images.each do |image|
+      .item{:class => count == 1 ? "active" : ""}
+        = image_tag image.path
+      - count += 1
+
+  - if carousel.controls
+    %a.carousel-control.left{:href => "##{carousel.id}", :data => {:slide => "prev"}}<
+      %i.fa.fa-chevron-left
+    %a.carousel-control.right{:href => "##{carousel.id}", :data => {:slide => "next"}}<
+      %i.fa.fa-chevron-right
+
+- content_for :script do
+  :javascript
+    $("##{carousel.id}").carousel({
+      interval: #{carousel.speed}
+    });
+    $('[id^=carousel-selector-]').click( function(){
+      var id_selector = $(this).attr("id");
+      var id = id_selector.substr(id_selector.length -1);
+      id = parseInt(id);
+      $("##{carousel.id}").carousel(id);
+      $('[id^=carousel-selector-]').removeClass('selected');
+      $(this).addClass('selected');
+    });
+    $("##{carousel.id}").on('slide.bs.carousel', function (event) {
+      var active = $(event.target).find('.carousel-inner > .item.active');
+      var from = active.index();
+      var next = $(event.relatedTarget);
+      var to = next.index();
+      var id = parseInt(to);
+      $('[id^=carousel-selector-]').removeClass('selected');
+      $('[id^=carousel-selector-'+id+']').addClass('selected');
+    });

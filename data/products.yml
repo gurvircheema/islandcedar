@@ -1,0 +1,13 @@
+
+-
+  title: "Shakes"
+  desc: "Shakes is a type of wood peiec that goes on roof"
+  img: "images/shake.jpg"
+-
+  title: "Shingle"
+  desc: "This is another piece of wood"
+  img: "images/shingle.jpg"
+-
+  title: "Treated products"
+  desc: "This are treated shingles and shakes that don't catch fire"
+  img: "images/treated.jpg"
